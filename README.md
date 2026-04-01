@@ -20,5 +20,5 @@ O card apresenta informações profissionais, stack tecnológica e links de cont
 Dentro do arquivo `index.html`, há uma seção de comentários detalhando o processo de pesquisa sobre Flexbox, as dificuldades encontradas e as soluções aplicadas para manter a acessibilidade visual do projeto.
 
 ## 🔗 Demonstração
-Você pode visualizar o projeto em execução através do link abaixo:
-[https://petoapenas.github.io/Card-Perfil/](CARD PERFIL)
+Você pode visualizar o projeto em execução [CLICANDO AQUI](https://petoapenas.github.io/Card-Perfil/)
+

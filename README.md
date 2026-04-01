@@ -1,6 +1,8 @@
 # 📇 Card de Perfil Profissional
+## 🔗 Demonstração
+-Você pode visualizar o projeto em execução [CLICANDO AQUI](https://petoapenas.github.io/Card-Perfil/)
 
-O objetivo principal foi a criação de um componente de interface responsivo utilizando boas práticas de semântica e acessibilidade.
+-O objetivo principal foi a criação de um componente de interface responsivo utilizando boas práticas de semântica e acessibilidade.
 
 ## 🛠️ Especificações Técnicas
 O projeto foca em fundamentos de estruturação e estilização moderna:
@@ -18,7 +20,3 @@ O card apresenta informações profissionais, stack tecnológica e links de cont
 
 ## 🧠 Relato de Experiência
 Dentro do arquivo `index.html`, há uma seção de comentários detalhando o processo de pesquisa sobre Flexbox, as dificuldades encontradas e as soluções aplicadas para manter a acessibilidade visual do projeto.
-
-## 🔗 Demonstração
-Você pode visualizar o projeto em execução [CLICANDO AQUI](https://petoapenas.github.io/Card-Perfil/)
-

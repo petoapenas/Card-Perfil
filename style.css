@@ -1,0 +1,301 @@
+/* ═══════════════════════════════════════════════════════════════════
+   style.css — Card de Perfil: Matheus Henrique
+   Disciplina: Front-end I
+   ═══════════════════════════════════════════════════════════════════
+   PALETA SEGURA PARA PROTANOPIA
+   Usa azul, ciano e âmbar. Sem vermelho/verde como indicadores.
+   Toda informação tem ícone + texto como suporte visual extra.
+   ═══════════════════════════════════════════════════════════════════ */
+
+:root {
+  --color-page-bg:     #0c0e16;
+  --color-card-bg:     #131620;
+  --color-card-border: #1f2338;
+
+  --color-text-primary:   #eceef8;
+  --color-text-secondary: #8b93b8;
+  --color-text-muted:     #4d5270;
+
+  --color-accent-blue:   #5b8dee;
+  --color-accent-amber:  #f0a500;
+  --color-accent-cyan:   #3ecfcf;
+  --color-accent-violet: #9b7ee8;
+
+  --color-github:   #5b8dee;
+  --color-linkedin: #3ecfcf;
+  --color-email:    #f0a500;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  --card-width:   350px;
+  --card-radius:  20px;
+  --card-padding: 30px;
+  --avatar-size:  100px;
+  --transition:   200ms ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-page-bg);
+  background-image: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(91,141,238,0.07) 0%, transparent 70%);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+
+  /*
+    FLEXBOX — CENTRALIZANDO O CARD NA TELA
+    flex-direction: row (padrão) → eixo principal = HORIZONTAL ←→
+    justify-content: center → centraliza no eixo horizontal
+    align-items: center     → centraliza no eixo vertical (transversal)
+  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 16px;
+}
+
+.page-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* ─── CARD ────────────────────────────────────────────────────────── */
+.profile-card {
+  width: var(--card-width);
+  max-width: 100%;
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--card-radius);
+  padding: var(--card-padding);
+
+  /*
+    FLEXBOX — EMPILHANDO SEÇÕES NO CARD
+    flex-direction: column → eixo principal = VERTICAL ↕
+    Agora align-items centraliza na HORIZONTAL (eixo transversal)
+    justify-content distribuiria na VERTICAL (eixo principal)
+    EXPERIMENTO: troque para row e observe a inversão dos eixos!
+  */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+
+  box-shadow:
+    0 8px 40px rgba(0,0,0,0.5),
+    0 0 0 1px rgba(91,141,238,0.06),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+/* ─── IDENTIDADE ──────────────────────────────────────────────────── */
+.card__identity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.card__avatar-wrapper {
+  position: relative;
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+}
+
+.card__avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid var(--color-accent-blue);
+  outline: 4px solid rgba(91,141,238,0.15);
+  display: block;
+}
+
+.card__status-dot {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 14px;
+  height: 14px;
+  background-color: var(--color-accent-amber);
+  border-radius: 50%;
+  border: 2px solid var(--color-card-bg);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(240,165,0,0.5); }
+  50%       { box-shadow: 0 0 0 6px rgba(240,165,0,0); }
+}
+
+.card__name {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  line-height: 1.15;
+}
+
+.card__role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-accent-blue);
+  background: rgba(91,141,238,0.1);
+  border: 1px solid rgba(91,141,238,0.28);
+  border-radius: 100px;
+  padding: 4px 12px;
+}
+
+.card__location {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.card__location i { color: var(--color-accent-amber); font-size: 0.75rem; }
+
+/* ─── BIO ─────────────────────────────────────────────────────────── */
+.card__bio {
+  width: 100%;
+  border-left: 3px solid var(--color-accent-blue);
+  padding-left: 14px;
+}
+
+.card__section-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--color-accent-blue);
+  margin-bottom: 10px;
+}
+
+.card__bio-text {
+  font-size: 0.865rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.card__bio-text strong {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+/* ─── SKILLS ──────────────────────────────────────────────────────── */
+.card__skills { width: 100%; }
+
+.card__skill-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.card__skill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+
+.card__skill-tag--web     { background: rgba(91,141,238,0.13);  color: var(--color-accent-blue);   border-color: rgba(91,141,238,0.25);  }
+.card__skill-tag--backend { background: rgba(155,126,232,0.13); color: var(--color-accent-violet); border-color: rgba(155,126,232,0.25); }
+.card__skill-tag--infra   { background: rgba(62,207,207,0.13);  color: var(--color-accent-cyan);   border-color: rgba(62,207,207,0.25);  }
+.card__skill-tag--cloud   { background: rgba(240,165,0,0.13);   color: var(--color-accent-amber);  border-color: rgba(240,165,0,0.25);   }
+.card__skill-tag--design  { background: rgba(91,141,238,0.13);  color: var(--color-accent-blue);   border-color: rgba(91,141,238,0.25);  }
+.card__skill-tag--auto    { background: rgba(155,126,232,0.13); color: var(--color-accent-violet); border-color: rgba(155,126,232,0.25); }
+
+/* ─── LINKS SOCIAIS ───────────────────────────────────────────────── */
+.card__links { width: 100%; }
+
+.card__social-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card__social-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 0.845rem;
+  font-weight: 500;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--color-card-border);
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.card__link-arrow {
+  margin-left: auto;
+  font-size: 0.65rem;
+  opacity: 0.35;
+  transition: opacity var(--transition);
+}
+
+/*
+  ACESSIBILIDADE PROTANOPIA — 3 indicadores por botão:
+  1. Ícone específico da rede   2. Texto do handle   3. Borda lateral colorida
+  Cores: GitHub=azul | LinkedIn=ciano | E-mail=âmbar
+*/
+.card__social-link--github   { border-left: 3px solid var(--color-github);   }
+.card__social-link--linkedin { border-left: 3px solid var(--color-linkedin); }
+.card__social-link--email    { border-left: 3px solid var(--color-email);    }
+
+.card__social-link--github:hover,
+.card__social-link--github:focus-visible {
+  background: rgba(91,141,238,0.09); border-color: var(--color-github); color: var(--color-github); outline: none;
+}
+.card__social-link--linkedin:hover,
+.card__social-link--linkedin:focus-visible {
+  background: rgba(62,207,207,0.09); border-color: var(--color-linkedin); color: var(--color-linkedin); outline: none;
+}
+.card__social-link--email:hover,
+.card__social-link--email:focus-visible {
+  background: rgba(240,165,0,0.09); border-color: var(--color-email); color: var(--color-email); outline: none;
+}
+
+.card__social-link:hover .card__link-arrow { opacity: 0.8; }
+
+.card__social-link:focus-visible {
+  outline: 2px solid var(--color-accent-blue);
+  outline-offset: 2px;
+}
+
+/* ─── FOOTER ──────────────────────────────────────────────────────── */
+.card__footer {
+  width: 100%;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-card-border);
+  text-align: center;
+}
+
+.card__footer small { font-size: 0.73rem; color: var(--color-text-muted); }
+
+/* ─── RESPONSIVIDADE ──────────────────────────────────────────────── */
+@media (max-width: 380px) {
+  :root { --card-padding: 22px; --avatar-size: 88px; }
+  .card__name { font-size: 1.35rem; }
+}

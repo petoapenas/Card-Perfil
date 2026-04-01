@@ -21,4 +21,4 @@ Dentro do arquivo `index.html`, há uma seção de comentários detalhando o pro
 
 ## 🔗 Demonstração
 Você pode visualizar o projeto em execução através do link abaixo:
-[INSIRA SEU LINK DO GITHUB PAGES AQUI]
+[https://petoapenas.github.io/Card-Perfil/]

@@ -1,6 +1,6 @@
-# 📇 Card de Perfil Profissional
-## 🔗 Demonstração
--Você pode visualizar o projeto em execução [CLICANDO AQUI](https://petoapenas.github.io/Card-Perfil/)
+# 📇 Demonstração Card de Perfil
+
+- 🔗 Você pode visualizar o projeto em execução [CLICANDO AQUI](https://petoapenas.github.io/Card-Perfil/)
 
 -O objetivo principal foi a criação de um componente de interface responsivo utilizando boas práticas de semântica e acessibilidade.
 
